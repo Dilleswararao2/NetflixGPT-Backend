@@ -11,6 +11,10 @@ const COHERE_API_KEY = process.env.REACT_APP_COHERE_API_KEY;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend server is active");
+});
+
 app.post("/cohere", async (req, res) => {
   try {
     const cohereRes = await axios.post(
